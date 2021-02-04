@@ -14,7 +14,8 @@ function run(string $questionText, callable $getQuestionData): void
     line($questionText);
     for ($i = 0; $i < MAX_NUMBER_OF_QUESTIONS; $i++) {
         [$question, $answer] = $getQuestionData();
-        $userAnswer = prompt("Question: $question");
+        line("Question: %s", $question);
+        $userAnswer = prompt("Your answer");
         if ($userAnswer === $answer) {
             line('Correct!');
         } else {
