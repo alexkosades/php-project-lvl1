@@ -2,11 +2,11 @@
 
 namespace Brain\Games\Prime;
 
-function run()
+function run(): void
 {
     \Brain\Games\Engine\run(
         'Answer "yes" if the number is prime, otherwise answer "no".',
-        function () {
+        function (): array {
             $question = rand(1, 100);
 
             $correctAnswer = isPrime($question) ? 'yes' : 'no';

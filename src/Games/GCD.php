@@ -2,11 +2,11 @@
 
 namespace Brain\Games\GCD;
 
-function run()
+function run(): void
 {
     \Brain\Games\Engine\run(
         'Find the greatest common divisor of given numbers.',
-        function () {
+        function (): array {
             $a = rand(1, 100);
             $b = rand(1, 100);
             $answer = gcd($a, $b);
@@ -15,7 +15,7 @@ function run()
     );
 }
 
-function gcd($a, $b)
+function gcd(int $a, int $b): int
 {
     while ($a != 0 && $b != 0) {
         if ($a > $b) {

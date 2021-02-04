@@ -2,11 +2,11 @@
 
 namespace Brain\Games\Progression;
 
-function run()
+function run(): void
 {
     \Brain\Games\Engine\run(
         'What number is missing in the progression?',
-        function () {
+        function (): array {
             $length = rand(5, 10);
             $step = rand(1, 20);
             $progression = [rand(1, 100)];

@@ -2,11 +2,11 @@
 
 namespace Brain\Games\Calc;
 
-function run()
+function run(): void
 {
     \Brain\Games\Engine\run(
         'What is the result of the expression?',
-        function () {
+        function (): ?array {
             $a = rand(1, 100);
             $b = rand(1, 100);
             switch (rand(1, 3)) {
