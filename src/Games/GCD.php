@@ -9,8 +9,20 @@ function run()
         function () {
             $a = rand(1, 100);
             $b = rand(1, 100);
-            $answer = gmp_gcd($a, $b);
+            $answer = gcd($a, $b);
             return ["$a $b", (string)$answer];
         }
     );
+}
+
+function gcd($a, $b)
+{
+    while ($a != 0 && $b != 0) {
+        if ($a > $b) {
+            $a = $a % $b;
+        } else {
+            $b = $b % $a;
+        }
+    }
+    return $a + $b;
 }
